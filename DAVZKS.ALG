@@ -1,72 +1,152 @@
-Algoritmo "semnome"
-// Disciplina   : [Linguagem e LÛgica de ProgramaÁ„o]
-// Professor   : Antonio Carlos Nicolodi 
-// DescriÁ„o   : Aqui vocÍ descreve o que o programa faz! (funÁ„o)
-// Autor(a)    : Nome do(a) aluno(a)
-// Data atual  : 12/04/2023
+Algoritmo "Cadastro Enem"
+// Disciplina   : [Curso de Logica de programacao do Zero]
+// Professor   : jader Jackson da Silva
+// Descri√ß√£o   : Aqui voc√™ descreve o que o programa faz! (fun√ß√£o)
+// Autor(a)    : David Levy
+// Data atual  : 25/04/2023
 Var
-// SeÁ„o de DeclaraÁıes das vari·veis 
+   // Se√ß√£o de Declara√ß√µes das vari√°veis
+   ENEM, SENHA,CONFIRMESENHA,CPF,CPFCONSULTADO,CONFIRME,MODAL: INTEIRO
+   ESTUDO:INTEIRO
+   NOME,NOMEMAE,NOMEPAI,DATANASCIMENTO,ESCOLHAESCOLA: CARACTERE
+   
+   RENDA, GELADEIRA, FREEZER, MICROONDAS, LAVAR, SECADORA, CARRO, MOTO:INTEIRO
+   TVS, TVASSINATURA, COMPUTADOR, CELULAR: INTEIRO
 
-VAR NOME
-VAR NOMEPAI
-VAR NOMEMAE
-VAR NASCIMENTO
-VAR MODALI
-VAR ESCOLHAESCOLA
-VAR SENHA
-VAR CONFIRMESENHA
-
+    OPUM,OPDOIS,OPTRES,OPQUATRO : REAL
 Inicio
-// SeÁ„o de Comandos, procedimento, funÁıes, operadores, etc... 
-ESCREVAL( "SEJA BEM VINDO A INSEN«AO DO ENEM 2023" )
-// INICIO DO CADRASTRO BASICO
-ESCREVAL ("NOME COMPLETO")
-LEIA(NOME)
-ESCREVAL ("NOME DA MAE")
-LEIA(NOMEMAE)
-ESCREVAL ("NOME DO PAI")
-LEIA (NOMEPAI)
-ESCREVAL  ("DATA DE NASCIMENTO")
-LEIA (NASCIMENTO)
-ESCREVAL ("QUAL SUA  MODALIDADE DE ESTUDO?")
-LEIA (MODALI)
-ESCREVAL("VOCE ESTUDOU EM ESCOLA PUBLICA OU PARTICULAR?")
-ESCREVAL ("DIGITE 1 PARTICULAR")
-ESCREVAL ("DIGITE 2 PUBLICA")
+   // Se√ß√£o de Comandos, procedimento, fun√ß√µes, operadores, etc...
+   REPITA
+      ESCREVAL("ENEM 2023")
+      ESCREVAL("1- ISENCAO")
+      ESCREVAL("2- INSCRICAO")
+      ESCREVAL("3- CONSULTA ")
+      ESCREVAL("0 - SAIR ")
+      // A VARIAVEL ENEM VAI SER USADA PARA MANTER O SISTEMA SEMPRE ABERTO
+      //ATE QUE O USUARIO DIGITE 0
+      //PARA ISSO FOI UTILIZADO O REPITA NO INICIO DO CODIGO QUE ESTA FINALIZANDO NO FIM
+      //DO CODIGO0
+      LEIA (ENEM)
 
-LEIA (ESCOLHAESCOLA)
-//FIM DAS INFORMA«OES BASICAS
-
-
-
-//INICIO CADASTRO E SENHA
-repita
-ESCREVAL ("INFORME UMA SENHA COM 6 NUMEROS DE 0 A 9 NUMEROS")
-LEIA (SENHA)
-ESCREVAL("CONFIRME SENHA")
-LEIA(CONFIRMESENHA)
-SE SENHA = CONFRIMESENHA ENTAO
-ESCREVAL("SENHA CADASTRADA COM SUCESSO")
-SENAO
-SE SENHA <> CONFIRMESENHA
-ESCREVAL ("SENHAS NAO CONRRESPONDENTES")
-FIMSE
-FIMSE
-ATE SENHA = CONFIRMESENHA
-//FIM SENHAS
- ESCREVAL("NOME:", NOME)
- ESCREVAL("NOME:", NOMEMAE)
- ESCREVAL("NOME:", NOMEPAI)
- ESCREVAL("DATA DE NASCIMENTO:", NASCIMENTO)
- ESCREVAL("MODALIDADE DE ESTUDO:", MODALI)
- ESCREVAL("ESCOLA PARTICULAR OU PUBLICA:", ESCOLHAESCOLA)
- SE ESCOLHAESCOLA = 1 ENTAO
- ESCREVAL ("NAO INSENTO")
- SENAO
- SE ESCOLHAESCOLA = 2 ENTAO
- ESCREVAL(" INSENTO")
-FIMSE
-FIMSE
+      SE (ENEM = 1) ENTAO
+         // INICIO DO BLOCO DA ISENCAO
+         ESCREVAL("NOME COMPLETO")
+         LEIA(NOME)
+         ESCREVAL("INFORME CPF")
+         LEIA(CPF)
+         ESCREVAL("DATA NASCIMENTO")
+         LEIA(DATANASCIMENTO)
+         ESCREVAL("NOME DA MAE")
+         LEIA(NOMEMAE)
+         ESCREVAL("NOME DO PAI")
+         LEIA(NOMEPAI)
 
 
+         ESCREVAL("INFORME A SUA MODALIDADE DE ESTUDO")
+         ESCREVAL("DIGITE 01 ESCOLA REGULAR")
+         ESCREVAL("DIGITE 01 EJA")
+         ESCREVAL("DIGITE 01 PROFISSIONALIZANTE")
+         LEIA(MODAL)
+         ESCREVAL("DIGITE 01 ESCOLA PUBLICA")
+         ESCREVAL("DIGITE 02 ESCOLA PARTICULAR")
+         LEIA(ESCOLHAESCOLA)
+         ESCREVAL("VOCE ESTA NO ULTIMO ANO DO ENSINO MEDIO")
+         ESCREVAL("ESTOU NO PENULTIMO ANO DO ENSINO MEDIO")
+         LEIA(ESTUDO)
+         //FIM DAS INFORMA√á√ïES BASICAS DA ISENCAO
+
+
+         //INICIO CADASTRO DE SENHA
+         //VOU UTILIZAR O CPF REPASSADO PARA SER O LOGIN
+         REPITA
+            ESCREVAL("INFORME UMA SENHA COM 6 NUMEROS DE 0 √Å 9 NUMEROS")
+            LEIA(SENHA)
+            ESCREVAL("CONFIRME SUA SENHA")
+            LEIA(CONFIRMESENHA)
+            SE SENHA = CONFIRMESENHA ENTAO
+               ESCREVAL("SENHA CADASTRADO COM SUCESSO")
+               ESCREVAL("SEU LOGIN E O NUMERO DO SEU CPF")
+            SENAO
+               SE SENHA <> CONFIRMESENHA ENTAO
+                  ESCREVAL ("SENHAS N√ÉO CORRESPONDENTES")
+               FIMSE
+            FIMSE
+         ATE  SENHA = CONFIRMESENHA
+         //   FIM DO BLOCO DE SENHA
+
+         //INICIO PESQUISA SOCIO ECONOMICA
+         ESCREVAL("INFORME RENDA")
+         ESCREVAL("1- R$1000 - R$2000")
+         ESCREVAL("2- R$2000 - R$3000")
+         ESCREVAL("3- R$3000 - R$4000")
+         ESCREVAL("4- R$4000 - R$10000")
+         OPUM <-2000
+         OPDOIS <- 3000
+         OPTRES <- 4000
+         OPQUATRO <- 5000
+         LEIA(RENDA)
+         Escreval("Quantidade Geladeira")
+         Leia (GELADEIRA)
+         Escreval("Quantidade  freezer")
+         Leia (FREEZER)
+         Escreval("Quantidade Microondas")
+         Leia (MICROONDAS)
+         Escreval("Quantidade Maquina Lavar")
+         Leia (LAVAR)
+         Escreval("Quantidade Secadora")
+         Leia (SECADORA)
+         Escreval("Quantidade carros")
+         Leia (CARRO)
+         Escreval("Quantidade motos")
+         Leia (MOTO)
+         Escreval("Quantidade  tv")
+         Leia (TVS)
+         Escreval("tv por assinatura")
+         Leia (TVASSINATURA)
+         Escreval("Quantidade  computador")
+         Leia (COMPUTADOR)
+         Escreval("internet 1-SIM 2-NAO")
+         Leia (NET)
+         Escreval("Quantidade Celulares")
+         Leia (CELULAR)
+         //FIM PESQUISA SOCIO ECONOMICA
+
+
+         //INICIO VALIDACAO DA ISENCAO
+         SE (  ESCOLHAESCOLA = 1) E (RENDA < OPUM)ENTAO
+         SE ( CARRO > = 1 ) E (MOTO > = 1)ENTAO
+         ESCREVAL ("ISENCAO APROVADA")
+         SENAO
+         ESCREVAL("SUA ISENCAO NAO FOI APROVADA")
+         FIMSE
+         FIMSE
+
+        //FIM DA VALIDACAO
+
+      SENAO
+         SE (ENEM = 2 ) ENTAO
+
+            ESCREVAL("INFORME SEU CPF")
+            LEIA (CPFCONSULTADO)
+            SE (CPF = CPFCONSULTADO) ENTAO
+               ESCREVAL( " 1 - CONFIRMAR SUA INSCRI√á√ÉO ")
+               ESCREVAL( " 2 - PARA SAIR ")
+               leia (CONFIRME)
+
+               SE (CONFIRME =1 ) ENTAO
+                  ESCREVAL("INSCRICAO REALIZADA COM SUCESSO")
+                  ESCREVAL("NOME", NOME)
+                  ESCREVAL("CPF",  CPF)
+                  ESCREVAL("LOGIN", CPF)
+               FIMSE
+            FIMSE
+
+         SENAO
+            SE  (ENEM = 3 ) ENTAO
+
+
+            FIMSE
+         FIMSE
+      FIMSE
+   ATE   (ENEM = 0)
 Fimalgoritmo
